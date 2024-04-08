@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Product_Dashboard } from "../app/types";
+import { Product_Dashboard } from "@/types";
 
 const Product_Dahsboard = ({ children, title, href }: Product_Dashboard) => {
   return (

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ProductListComponentProps, ProductListProps } from "../app/types";
+import { ProductListComponentProps, ProductListProps } from "@/types";
 
 const Product_List = ({ children }: ProductListProps) => {
   return (

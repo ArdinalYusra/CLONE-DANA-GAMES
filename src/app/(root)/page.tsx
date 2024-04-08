@@ -8,7 +8,7 @@ import {
   VoucherDigitalItems,
 } from "@/constants";
 import Product_Dahsboard from "@/components/Product_Dashboard";
-import { ProductListComponentProps } from "@/app/types";
+import { ProductListComponentProps } from "@/types";
 
 const HomePage = () => {
   return (

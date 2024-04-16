@@ -3,41 +3,17 @@
 import Image from "next/image";
 import React, { Children, useEffect, useState } from "react";
 import { FaCircleQuestion } from "react-icons/fa6";
-import logoDana from "@/lib/images/logoDana.png";
-import danaProtection from "@/lib/images/danaProtection.png";
-import Dana from "@/lib/images/Dana.png";
-import dompetDigital from "@/lib/images/dompetDigital.png";
-import merchantDana from "@/lib/images/merchantDana.png";
-import safeDana from "@/lib/images/safeDana.png";
-import danaProtect from "@/lib/images/danaProtect.png";
-import helpBackground from "@/lib/images/helpBackground.png";
+import logoDana from "@/public/images/logoDana.png";
+import danaProtection from "@/public/images/danaProtection.png";
+import Dana from "@/public/images/Dana.png";
+import danaProtect from "@/public/images/danaProtect.png";
 import ModalComponent from "@/components/Login/ModalComponent";
-import danaPicture from "@/lib/images/danaPicture.png";
+import danaPicture from "@/public/images/danaPicture.png";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { FaUnlockAlt } from "react-icons/fa";
 import { SlInfo } from "react-icons/sl";
 import ModalEnter from "@/components/Login/ModalEnter";
-
-const ImagesVerifikasi = [
-  {
-    url: "https://a.m.dana.id/resource/icons/icon-new-card.svg",
-    titleSpan: "Dompet digital untuk kamu",
-    titleParagraf:
-      "Simpan uang serta kartu debit/kredit dengan praktis di DANA",
-  },
-  {
-    url: "https://a.m.dana.id/resource/icons/icon-proceed-trx.svg",
-    titleSpan: "Bayar apa pun jadi mudah",
-    titleParagraf:
-      "Belanja di merchant? Tinggal scan QRIS. Mau bayar online? Tinggal kirim uang!",
-  },
-  {
-    url: "https://a.m.dana.id/resource/icons/icon-trusted-device.svg",
-    titleSpan: "Selalu aman dengan DANA!",
-    titleParagraf:
-      "DANA Protection menjaga uang sekaligus datamu lengkap dengan kode PIN agar selalu aman.",
-  },
-];
+import { BenefitDANA } from "@/constants";
 
 const Login = () => {
   const [active, setActive] = useState(false);
@@ -104,8 +80,8 @@ const Login = () => {
             <div>
               <Image
                 src={Dana}
-                width={150}
-                height={150}
+                width={50}
+                height={50}
                 alt="/"
                 className="mx-auto"
               />
@@ -140,7 +116,7 @@ const Login = () => {
                 Berbagai kemudahan bisa kamu dapatkan di DANA!
               </strong>
               <div className="grid grid-row-3 w-full mt-5">
-                {ImagesVerifikasi.map((item, index) => {
+                {BenefitDANA.map((item, index) => {
                   return (
                     <div key={index} className="flex gap-1 m-2">
                       <div className="mr-3 max-h-12 max-w-12">
@@ -162,8 +138,8 @@ const Login = () => {
                   Keamanan datamu dilindungi oleh DANA Protection
                 </p>
                 <button
-                  disabled={isDisabled || nomor.length < 10}
                   onClick={handleClick}
+                  disabled={isDisabled || nomor.length < 10}
                   className="w-full py-3 font-bold bg-blue-500 text-white rounded-md my-3 disabled:bg-slate-300"
                 >
                   LANJUTKAN
@@ -181,9 +157,8 @@ const Login = () => {
                     </p>
                   </div>
                   <button
-                    type="submit"
-                    className="text-blue-500 flex px-2 py-1 border ease-in duration-200 border-blue-500 gap-2 rounded-md font-bold
-                    $"
+                    onClick={() => setActive(!active)}
+                    className="text-blue-500 flex px-2 py-1 border ease-in duration-200 border-blue-500 gap-2 rounded-md font-bold"
                   >
                     BANTUAN
                     <FaCircleQuestion size={15} className="mt-1" />
@@ -224,7 +199,7 @@ const Login = () => {
               </p>
             </div>
             <button
-              onClick={() => setModalEnterState(true)}
+              onClick={() => setActive(!active)}
               className="text-blue-500 flex px-2 py-1 border ease-in duration-200 border-blue-500 gap-2 rounded-md font-bold"
             >
               BANTUAN
@@ -232,7 +207,7 @@ const Login = () => {
             </button>
             <ModalComponent
               open={active}
-              onClose={() => setActive(false)}
+              onClose={() => setActive(!active)}
             ></ModalComponent>
           </div>
         </div>

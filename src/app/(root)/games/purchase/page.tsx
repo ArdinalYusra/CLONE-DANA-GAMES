@@ -1,36 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import DownloadLogo from "@/lib/images/DownloadLogo.png";
-import PurchaseList from "@/components/purchase/PurchaseList";
+import React, { useState } from "react";
+import DownloadLogo from "@/public/images/DownloadLogo.png";
+import { PurchaseListItems } from "@/constants";
 
 const GamesImages =
   "https://a.m.dana.id/resource/imgs/item-digital/games/mobile_legends.png";
 
 const Purchase = () => {
-  const savedInputValue = localStorage.getItem("userId, serverId") || "";
   const [userId, setUserId] = useState("");
-  const [serverId, setServerId] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
   const [error, setError] = useState("");
 
-  const handleChangeInputUser = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUserId(event.target.value);
 
-    setIsDisabled(userId === "" || userId.length < 4 ? true : false);
-
-    if (isDisabled) {
-      setError("Pastikan User ID anda dengan benar");
-    }
-  };
-  const handleChangeInputServer = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setServerId(event.target.value);
-    setIsDisabled(serverId === "" || serverId.length < 4 ? true : false);
+    setIsDisabled(userId === "");
 
     if (isDisabled) {
       setError("Pastikan User ID anda dengan benar");
@@ -70,15 +56,13 @@ const Purchase = () => {
             </p>
             <form className="space-y-5 flex flex-col">
               <input
-                onChange={handleChangeInputUser}
+                onChange={handleChangeInput}
                 value={userId}
                 type="text"
                 placeholder="Masukan User ID"
                 className="p-2 pr-20 rounded-md"
               />
               <input
-                onChange={handleChangeInputServer}
-                value={serverId}
                 type="text"
                 placeholder="Type Server ID here"
                 className="p-2 pr-20 rounded-md"
@@ -99,11 +83,21 @@ const Purchase = () => {
               </span>{" "}
               Pilih Jumlah
             </p>
-            <PurchaseList />
+            <div className="w-full grid grid-rows-7 grid-cols-2 text-sm p-3 gap-x-5 gap-y-6">
+              {PurchaseListItems.map((item, index) => (
+                <button
+                  key={index}
+                  className="flex-center flex-col bg-sltaate-900 border h-24 md:h-20 w-40 md:w-32 p-3 rounded-md focuse:bg-blue-500 focus:text-white"
+                >
+                  <li className="font-semibold text-slate-100">{item.list}</li>
+                  <li className="text-orange-500">{item.price}</li>
+                </button>
+              ))}
+            </div>
             <div className="my-5 md:mx-5">
               <button
                 disabled={isDisabled}
-                className="w-full py-3 text-white bg-blue-500 rounded-sm disabled:bg-slate-300"
+                className="w-full py-3 text-white bg-blue-500 rounded-md disabled:opacity-50"
               >
                 LANJUTKAN
               </button>

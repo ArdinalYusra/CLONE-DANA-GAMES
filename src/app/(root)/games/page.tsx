@@ -1,3 +1,5 @@
+"use client";
+
 import Product_List, {
   Product_Components,
   Product_List_Component,

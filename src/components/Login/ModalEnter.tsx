@@ -1,6 +1,3 @@
-import helpBackground from "@/lib/images/helpBackground.png";
-import React from "react";
-
 type propsType = {
   open: boolean;
   onClose: () => void;

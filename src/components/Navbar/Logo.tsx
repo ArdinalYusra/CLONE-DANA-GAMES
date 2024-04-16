@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import logoDana from "@/lib/images/logoDana.png";
+import logoDana from "@/public/images/logoDana.png";
 import Link from "next/link";
 
 const Logo = () => {

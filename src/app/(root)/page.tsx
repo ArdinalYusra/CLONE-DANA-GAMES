@@ -18,7 +18,15 @@ const HomePage = () => {
           <SlideShow autoSlides={true} autoSlideInterval={3000} />
         </div>
         <div className="wrapper flex flex-col py-5 gap-5">
-          <Product_Dahsboard title="Paling Populer" href="/games">
+          <div className="flex-between">
+            <p className="font-semibold text-2xl">Paling Populer</p>
+            <Link href={"/"}>
+              <button className="rounded-md font-semibold text-sm bg-blue-500 p-2">
+                LIHAT SEMUA
+              </button>
+            </Link>
+          </div>
+          <Product_Dahsboard>
             {PalingPopuler.map((item, index) => {
               return (
                 <List_Product_Dahsboard key={index} href={"/games/purchase"}>
@@ -28,7 +36,15 @@ const HomePage = () => {
               );
             })}
           </Product_Dahsboard>
-          <Product_Dahsboard title="Games" href="/games">
+          <div className="flex-between">
+            <p className="font-semibold text-2xl">Games</p>
+            <Link href={"/games"}>
+              <button className="rounded-md font-semibold text-sm bg-blue-500 p-2">
+                LIHAT SEMUA
+              </button>
+            </Link>
+          </div>
+          <Product_Dahsboard>
             {GamesItems.slice(0, 4).map((item, index) => {
               return (
                 <List_Product_Dahsboard key={index} href={"/games/purchase"}>
@@ -38,7 +54,15 @@ const HomePage = () => {
               );
             })}
           </Product_Dahsboard>
-          <Product_Dahsboard title="Voucher Digital" href="/voucherdigital">
+          <div className="flex-between">
+            <p className="font-semibold text-2xl">Digital Voucher</p>
+            <Link href={"/voucherdigital"}>
+              <button className="rounded-md font-semibold text-sm bg-blue-500 p-2">
+                LIHAT SEMUA
+              </button>
+            </Link>
+          </div>
+          <Product_Dahsboard>
             {VoucherDigitalItems.slice(0, 4).map((item, index) => {
               return (
                 <List_Product_Dahsboard key={index} href={"/games/purchase"}>

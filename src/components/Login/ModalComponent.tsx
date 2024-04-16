@@ -1,12 +1,12 @@
 import Image from "next/image";
-import helpBackground from "@/lib/images/helpBackground.png";
+import helpBackground from "@/public/images/helpBackground.png";
 
-type propsType = {
+type ModalComponentProps = {
   open: boolean;
   onClose: () => void;
 };
 
-const ModalComponent = ({ open, onClose }: propsType) => {
+const ModalComponent = ({ open, onClose }: ModalComponentProps) => {
   return (
     <div
       onClick={onClose}

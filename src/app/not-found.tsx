@@ -1,12 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import danaErrorHandling from "@/lib/images/danaErrorHandling.png";
-import Dana from "@/lib/images/Dana.png";
+import danaErrorHandling from "@/public/images/danaErrorHandling.png";
+import Dana from "@/public/images/Dana.png";
 import NavLarge404 from "@/components/404/NavLarge404";
 import Image from "next/image";
 import NotFoundNav from "@/components/404/NotFoundNav";
-import Footer from "@/components/404/Footer404";
 import Footer404 from "@/components/404/Footer404";
 import { IoIosArrowForward } from "react-icons/io";
 

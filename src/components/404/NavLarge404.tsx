@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import Dana from "@/lib/images/Dana.png";
-import logo404 from "@/lib/images/logo404.png";
+import Dana from "@/public/images/Dana.png";
+import logo404 from "@/public/images/logo404.png";
 import NavHover from "@/components/404/NavHover";
 
 const NavLarge404 = () => {

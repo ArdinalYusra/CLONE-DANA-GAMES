@@ -1,20 +1,56 @@
+import { Gamepad2, Home, Newspaper, WalletCards } from "lucide-react";
+
+
 export const NavLinks = [
     {
         title: "Beranda",
-        href: "/",
+        path: "/",
     },
     {
         title: "Game",
-        href: "/games",
+        path: "/games",
     },
     {
         title: "Voucher Digital",
-        href: "/voucherdigital",
+        path: "/voucherdigital",
     },
     {
         title: "News & Events",
-        href: "/newsdanevents",
+        path: "/newsdanevents",
     },
+]
+
+export const NavLinks_Mobile = [
+  {
+    title: "Beranda",
+    path: "/",
+    icon: Home,
+  },
+  {
+    title: "Game",
+    path: "/games",
+    icon: Gamepad2,
+  },
+  {
+    title: "Voucher Digital",
+    path: "/voucherdigital",
+    icon: Home,
+  },
+  {
+    title: "News & Events",
+    path: "/newsdanevents", 
+    icon: Newspaper,
+  },
+  {
+    title: "Riwayat Transaksi",
+    path: "/",
+    icon: Newspaper,
+  },
+  {
+    title: "Pocket",
+    path: "/",
+    icon: WalletCards,
+  },
 ]
 
 export const PalingPopuler = [
@@ -339,4 +375,80 @@ export const ImagesEventPage = [
       title2:
         "Ada Cashback s/d 10% Tanpa Minimum Transaksi di DANA Games. Serbu!",
     },
-  ];
+];
+
+export const BenefitDANA = [
+  {
+    url: "https://a.m.dana.id/resource/icons/icon-new-card.svg",
+    titleSpan: "Dompet digital untuk kamu",
+    titleParagraf:
+      "Simpan uang serta kartu debit/kredit dengan praktis di DANA",
+  },
+  {
+    url: "https://a.m.dana.id/resource/icons/icon-proceed-trx.svg",
+    titleSpan: "Bayar apa pun jadi mudah",
+    titleParagraf:
+      "Belanja di merchant? Tinggal scan QRIS. Mau bayar online? Tinggal kirim uang!",
+  },
+  {
+    url: "https://a.m.dana.id/resource/icons/icon-trusted-device.svg",
+    titleSpan: "Selalu aman dengan DANA!",
+    titleParagraf:
+      "DANA Protection menjaga uang sekaligus datamu lengkap dengan kode PIN agar selalu aman.",
+  },
+];
+
+export const PurchaseListItems = [
+  {
+    list: "5 Diamonds",
+    price: "Rp1.500",
+  },
+  {
+    list: "10 Diamonds",
+    price: "Rp2.850",
+  },
+  {
+    list: "14 Diamonds",
+    price: "Rp3.800",
+  },
+  {
+    list: "18 Diamonds",
+    price: "Rp4.750",
+  },
+  {
+    list: "36 Diamonds",
+    price: "Rp9.500",
+  },
+  {
+    list: "74 Diamonds",
+    price: "Rp19.000",
+  },
+  {
+    list: "Weekly Diamond Pass",
+    price: "Rp27.550",
+  },
+  {
+    list: "222 Diamonds",
+    price: "Rp57.000",
+  },
+  {
+    list: "370 Diamonds",
+    price: "Rp95.000",
+  },
+  {
+    list: "Twilight Pass",
+    price: "Rp150.000",
+  },
+  {
+    list: "966 Diamonds",
+    price: "Rp237.500",
+  },
+  {
+    list: "2010 Diamonds",
+    price: "Rp475.000",
+  },
+  {
+    list: "4830 Diamonds",
+    price: "Rp1.140.000",
+  },
+];

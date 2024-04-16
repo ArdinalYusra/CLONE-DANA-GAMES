@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import DownloadLogo from "@/lib/images/DownloadLogo.png";
-import KominfoLogo from "@/lib/images/KominfoLogo.png";
-import logoDana from "@/lib/images/logoDana.png";
+import DownloadLogo from "@/public/images/DownloadLogo.png";
+import KominfoLogo from "@/public/images/KominfoLogo.png";
+import logoDana from "@/public/images/logoDana.png";
 import { IoIosArrowRoundUp } from "react-icons/io";
 import {
   FaFacebook,
